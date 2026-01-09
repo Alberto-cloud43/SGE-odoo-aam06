@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_paciente_user,aam_hospital.access_paciente_user,model_aam_hospital_paciente,base.group_user,1,1,1,0
+access_departamento_user,aam_hospital.access_departamento_user,model_aam_hospital_departamento,base.group_user,1,1,1,0
+access_medico_user,aam_hospital.access_medico_user,model_aam_hospital_medico,base.group_user,1,1,1,0
+access_habitacion_user,aam_hospital.access_habitacion_user,model_aam_hospital_habitacion,base.group_user,1,1,1,0
+
+access_paciente_admin,aam_hospital.access_paciente_admin,model_aam_hospital_paciente,base.group_system,1,1,1,1
+access_departamento_admin,aam_hospital.access_departamento_admin,model_aam_hospital_departamento,base.group_system,1,1,1,1
+access_medico_admin,aam_hospital.access_medico_admin,model_aam_hospital_medico,base.group_system,1,1,1,1
+access_habitacion_admin,aam_hospital.access_habitacion_admin,model_aam_hospital_habitacion,base.group_system,1,1,1,1

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="aam_hospital.departamento_tree" model="ir.ui.view">
+            <field name="name">aam_hospital.departamento.tree</field>
+            <field name="model">aam_hospital.departamento</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id_departamento"/>
+                    <field name="especialidad"/>
+                    <field name="telefono_guardia"/>
+                    <field name="numero_despacho"/>
+                </tree>
+            </field>
+        </record>
+        <record id="aam_hospital.departamento_form" model="ir.ui.view">
+            <field name="name">aam_hospital.departamento.form</field>
+            <field name="model">aam_hospital.departamento</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="id_departamento"/>
+                            <field name="especialidad"/>
+                            <field name="telefono_guardia"/>
+                            <field name="numero_despacho"/>
+                        </group>
+
+                        <group>
+                            <field name="descripcion"/>
+                        </group>
+                        <group string="Pacientes asignados">
+                            <field name="paciente_ids"> 
+                                <tree> 
+                                    <field name="nombre"/> 
+                                    <field name="apellido1"/> 
+                                    <field name="apellido2"/>
+                                    <field name="fecha_ingreso"/> 
+                                    <field name="telefono"/> 
+                                    <field name="email"/> 
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

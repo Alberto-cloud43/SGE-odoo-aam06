@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="aam_hospital.medico_tree" model="ir.ui.view">
+            <field name="name">aam_hospital.medico.tree</field>
+            <field name="model">aam_hospital.medico</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="numero_colegiado"/>
+                    <field name="nombre_medico"/>
+                    <field name="apellido_medico_1"/>
+                    <field name="apellido_medico_2"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                    <field name="departamento_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="aam_hospital.medico_form" model="ir.ui.view">
+            <field name="name">aam_hospital.medico.form</field>
+            <field name="model">aam_hospital.medico</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="numero_colegiado"/>
+                            <field name="nombre_medico"/>
+                            <field name="apellido_medico_1"/>
+                            <field name="apellido_medico_2"/>
+                        </group>
+                        <group string="Contacto">
+                            <field name="telefono"/>
+                            <field name="email"/>
+                        </group>
+                        <group string="Departamento asignado">
+                            <field name="departamento_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>    
+    </data>
+</odoo>

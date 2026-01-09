@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="aam_hospital.paciente_action" model="ir.actions.act_window">
+            <field name="name">Paciente</field>
+            <field name="res_model">aam_hospital.paciente</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="aam_hospital.departamento_action" model="ir.actions.act_window">
+            <field name="name">Departamentos</field>
+            <field name="res_model">aam_hospital.departamento</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+         <record id="aam_hospital.medico_action" model="ir.actions.act_window">
+            <field name="name">Médicos</field>
+            <field name="res_model">aam_hospital.medico</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="aam_hospital.habitacion_action" model="ir.actions.act_window">
+            <field name="name">Habitaciones</field>
+            <field name="res_model">aam_hospital.habitacion</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="aam_hospital.habitacion_tree"/>
+        </record>
+
+        <menuitem id="aam_hospital.menu_root" name=" Hospitalizacion" sequence="1"/>
+        <menuitem id="aam_hospital.menu_paciente" name="Pacientes" parent="aam_hospital.menu_root" action="aam_hospital.paciente_action" sequence="1"/>
+        <menuitem id="aam_hospital.menu_departamento" name="Departamentos" parent="aam_hospital.menu_root" action="aam_hospital.departamento_action" sequence="2"/>
+        <menuitem id="aam_hospital.menu_medico" name="Médicos" parent="aam_hospital.menu_root" action="aam_hospital.medico_action" sequence="3"/>
+        <menuitem id="aam_hospital.menu_habitacion" name="Habitaciones" parent="aam_hospital.menu_root" action="aam_hospital.habitacion_action" sequence="4"/>
+    </data>
+</odoo>
