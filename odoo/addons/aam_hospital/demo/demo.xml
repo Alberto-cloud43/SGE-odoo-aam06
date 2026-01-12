@@ -1,30 +1,25 @@
 <odoo>
     <data>
-<!--
-          <record id="object0" model="aam_hospital.aam_hospital">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
-
-          <record id="object1" model="aam_hospital.aam_hospital">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
-          </record>
-
-          <record id="object2" model="aam_hospital.aam_hospital">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
-
-          <record id="object3" model="aam_hospital.aam_hospital">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
-
-          <record id="object4" model="aam_hospital.aam_hospital">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
+        <record id="paciente_bryan"model="aam_hospital.paciente">
+          <field name="nip">13121f</field>
+          <field name="nombre">Bryan</field>
+          <field name="apellido1">Bandam</field>
+          <field name="apellido2">Soso</field>
+          <field name="fecha_nacimiento">24-12-2002</field>
+          <field name="fecha_ingreso">12-01-2026</field>
+          <field name="fecha_alta">13-01-2026</field>
+          <field name="genero">Masculino</field>
+          <field name="direccion">c/BuenaVista 5 4C</field>
+          <field name="ciudad">Fuenlabrada</field>
+          <field name="codigo_postal">28943</field>
+          <field name="telefono">673825432</field>
+          <field name="email">bryan23@hotmail.com</field>
+          <field name="historial_medico">cuentitis grave enero 2026</field>
+          <field name="movilidad">Resposo Absoluto</field>
+          <field name="alergias">Estudio</field>
+          <field name="aislamiento">Aislamiento por Contacto</field>
+          <field name="departamento_ids">1</field>
+          <field name="id_habitacion">1</field>
+        </record>
     </data>
 </odoo>

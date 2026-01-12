@@ -4,7 +4,7 @@ class Habitacion(models.Model):
     _name = 'aam_hospital.habitacion'
     _description = 'Habitacion del Hospital'
 
-    numero_habitacion = fields.Integer('Numero de habitacion', required=True, unique=True)
+    numero_habitacion = fields.Integer('Numero de habitacion', required=True)
     tipo_habitacion = fields.Selection([
         ('individual', 'Individual'),
         ('doble', 'Doble'),

@@ -34,6 +34,6 @@ Long description of module's purpose
     'demo': [
         'demo/demo.xml',
     ],
-    'icon': 'static/description/icon.jpg',
+    'icon': '/aam_hospital/static/description/icon.png'
 }
 

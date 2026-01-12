@@ -4,7 +4,7 @@ class Paciente(models.Model):
     _name = 'aam_hospital.paciente'
     _description = 'Paciente de el Hospital'
 
-    nip = fields.Char('Numero Identificacion', required=True, unique=True)
+    nip = fields.Char('Numero Identificacion', required=True)
     nombre = fields.Char('Nombre del Paciente', required=True)
     apellido1 = fields.Char('Primer apellido', required=True)
     apellido2 = fields.Char('Segundo apellido',required=True)
@@ -19,8 +19,8 @@ class Paciente(models.Model):
     direccion = fields.Text('Direccion', required=True)
     ciudad = fields.Char('Ciudad', required=True)
     codigo_postal = fields.Char('Codigo Postal', required=True)
-    telefono = fields.Char('Telefono ', required=True, unique=True)
-    email = fields.Char('Email', required=True, unique=True)
+    telefono = fields.Char('Telefono ', required=True)
+    email = fields.Char('Email', required=True)
     historial_medico = fields.Text('Historial Medico')
     movilidad = fields.Selection([
         ('reposo_absoluto', 'Reposo Absoluto'),

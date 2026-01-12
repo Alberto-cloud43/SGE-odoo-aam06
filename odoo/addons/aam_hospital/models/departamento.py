@@ -4,11 +4,11 @@ class Departamento(models.Model):
     _name = 'aam_hospital.departamento'
     _description = 'Departamento del Hospital'
 
-    id_departamento = fields.Integer('ID del departamento', required=True, unique=True)
-    especialidad = fields.Char('Especialidad', required=True, unique=True)
+    id_departamento = fields.Integer('ID del departamento', required=True)
+    especialidad = fields.Char('Especialidad', required=True)
     descripcion = fields.Text('Descripcion')
-    telefono_guardia = fields.Char('Telefono de guardia',required=True, unique=True)
-    numero_despacho = fields.Integer('Numero de despacho',required=True, unique=True)
+    telefono_guardia = fields.Char('Telefono de guardia',required=True)
+    numero_despacho = fields.Integer('Numero de despacho',required=True)
     paciente_ids = fields.Many2many(
     'aam_hospital.paciente',
     'paciente_departamento_rel',
