@@ -9,6 +9,7 @@ class Medico(models.Model):
     apellido_medico_2 = fields.Char('Segundo apellido', required=True)
     email = fields.Char('Email', required=True)
     telefono = fields.Char('Telefono', required=True)
+    imagen=fields.Image('Fotografia del medico')
     departamento_id = fields.Many2one('aam_hospital.departamento', 'Departamento', required=True)
     _sql_constraints = [
         ('numero_colegiado_unique', 'unique(numero_colegiado)', 'El numero de colegiado debe ser unico.'),

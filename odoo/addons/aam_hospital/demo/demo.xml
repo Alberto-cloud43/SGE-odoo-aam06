@@ -1,25 +1,141 @@
 <odoo>
     <data>
-        <record id="paciente_bryan"model="aam_hospital.paciente">
-          <field name="nip">13121f</field>
-          <field name="nombre">Bryan</field>
-          <field name="apellido1">Bandam</field>
-          <field name="apellido2">Soso</field>
-          <field name="fecha_nacimiento">24-12-2002</field>
-          <field name="fecha_ingreso">12-01-2026</field>
-          <field name="fecha_alta">13-01-2026</field>
-          <field name="genero">Masculino</field>
-          <field name="direccion">c/BuenaVista 5 4C</field>
-          <field name="ciudad">Fuenlabrada</field>
-          <field name="codigo_postal">28943</field>
-          <field name="telefono">673825432</field>
-          <field name="email">bryan23@hotmail.com</field>
-          <field name="historial_medico">cuentitis grave enero 2026</field>
-          <field name="movilidad">Resposo Absoluto</field>
-          <field name="alergias">Estudio</field>
-          <field name="aislamiento">Aislamiento por Contacto</field>
-          <field name="departamento_ids">1</field>
-          <field name="id_habitacion">1</field>
+        <record id="departamento_urgencias" model="aam_hospital.departamento">
+            <field name="id_departamento">1</field>
+            <field name="especialidad">Urgencias</field>
+            <field name="descripcion">Atención inmediata</field>
+            <field name="telefono_guardia">600111222</field>
+            <field name="numero_despacho">101</field>
         </record>
+
+        <record id="departamento_cardio" model="aam_hospital.departamento">
+            <field name="id_departamento">2</field>
+            <field name="especialidad">Cardiología</field>
+            <field name="descripcion">Atención especializada en cardiología</field>
+            <field name="telefono_guardia">600114442</field>
+            <field name="numero_despacho">156</field>
+        </record>
+
+        <record id="departamento_digestivo" model="aam_hospital.departamento">
+            <field name="id_departamento">3</field>
+            <field name="especialidad">Digestivo</field>
+            <field name="descripcion">Atención especializada en digestivo</field>
+            <field name="telefono_guardia">600112452</field>
+            <field name="numero_despacho">250</field>
+        </record>
+        <record id="habitacion_1" model="aam_hospital.habitacion">
+            <field name="numero_habitacion">1</field>
+            <field name="tipo_habitacion">individual</field>
+            <field name="planta">1</field>
+            <field name="estado">ocupada</field>
+        </record>
+
+        <record id="habitacion_2" model="aam_hospital.habitacion">
+            <field name="numero_habitacion">2</field>
+            <field name="tipo_habitacion">individual</field>
+            <field name="planta">1</field>
+            <field name="estado">ocupada</field>
+        </record>
+
+        <record id="habitacion_34" model="aam_hospital.habitacion">
+            <field name="numero_habitacion">34</field>
+            <field name="tipo_habitacion">doble</field>
+            <field name="planta">2</field>
+            <field name="estado">disponible</field>
+        </record>
+        <record id="paciente_bryan" model="aam_hospital.paciente">
+            <field name="nip">13121f</field>
+            <field name="nombre">Bryan</field>
+            <field name="apellido1">Bandam</field>
+            <field name="apellido2">Soso</field>
+            <field name="fecha_nacimiento">2002-12-24</field>
+            <field name="fecha_ingreso">2026-01-12</field>
+            <field name="fecha_alta">2026-01-13</field>
+            <field name="genero">masculino</field>
+            <field name="direccion">c/BuenaVista 5 4C</field>
+            <field name="ciudad">Fuenlabrada</field>
+            <field name="codigo_postal">28943</field>
+            <field name="telefono">673825432</field>
+            <field name="email">bryan23@hotmail.com</field>
+            <field name="historial_medico">cuentitis grave enero 2026</field>
+            <field name="movilidad">reposo_absoluto</field>
+            <field name="alergias">Estudio</field>
+            <field name="aislamiento">contacto</field>
+            <field name="departamento_ids" eval="[(6, 0, [ref('aam_hospital.departamento_urgencias')])]"/>
+            <field name="id_habitacion" ref="aam_hospital.habitacion_1"/>
+        </record>
+
+        <record id="paciente_maria" model="aam_hospital.paciente">
+            <field name="nip">99887A</field>
+            <field name="nombre">María</field>
+            <field name="apellido1">López</field>
+            <field name="apellido2">García</field>
+            <field name="fecha_nacimiento">1988-05-14</field>
+            <field name="fecha_ingreso">2026-01-15</field>
+            <field name="genero">femenino</field>
+            <field name="direccion">Av. Europa 12</field>
+            <field name="ciudad">Móstoles</field>
+            <field name="codigo_postal">28930</field>
+            <field name="telefono">699112233</field>
+            <field name="email">maria.lopez@correo.com</field>
+            <field name="historial_medico">Hipertensión controlada</field>
+            <field name="movilidad">con_ayuda</field>
+            <field name="alergias">Penicilina</field>
+            <field name="aislamiento">no</field>
+            <field name="departamento_ids" eval="[(6, 0, [ref('aam_hospital.departamento_cardio')])]"/>
+        </record>
+
+        <record id="paciente_javier" model="aam_hospital.paciente">
+            <field name="nip">55443Z</field>
+            <field name="nombre">Javier</field>
+            <field name="apellido1">Santos</field>
+            <field name="apellido2">Moreno</field>
+            <field name="fecha_nacimiento">1975-09-02</field>
+            <field name="fecha_ingreso">2026-01-16</field>
+            <field name="genero">masculino</field>
+            <field name="direccion">Calle Mayor 22</field>
+            <field name="ciudad">Leganés</field>
+            <field name="codigo_postal">28911</field>
+            <field name="telefono">688223344</field>
+            <field name="email">javier.santos@correo.com</field>
+            <field name="historial_medico">Reflujo gastroesofágico</field>
+            <field name="movilidad">libre</field>
+            <field name="alergias">Ninguna</field>
+            <field name="aislamiento">no</field>
+            <field name="departamento_ids" eval="[(6, 0, [ref('aam_hospital.departamento_digestivo')])]"/>
+        </record>
+        <record id="medico_laura" model="aam_hospital.medico">
+            <field name="numero_colegiado">202345</field>
+            <field name="nombre_medico">Laura</field>
+            <field name="apellido_medico_1">Gómez</field>
+            <field name="apellido_medico_2">Ruiz</field>
+            <field name="email">laura.gomez@hospitaldemo.com</field>
+            <field name="telefono">612345678</field>
+            <field name="imagen" type="base64" file="aam_hospital/static/img/doctor2.png"/>
+            <field name="departamento_id" ref="aam_hospital.departamento_urgencias"/>
+        </record>
+
+        <record id="medico_carlos" model="aam_hospital.medico">
+            <field name="numero_colegiado">202346</field>
+            <field name="nombre_medico">Carlos</field>
+            <field name="apellido_medico_1">Martínez</field>
+            <field name="apellido_medico_2">López</field>
+            <field name="email">carlos.martinez@hospitaldemo.com</field>
+            <field name="telefono">622334455</field>
+            <field name="imagen" type="base64" file="aam_hospital/static/img/doctor1.png"/>
+            <field name="departamento_id" ref="aam_hospital.departamento_cardio"/>
+        </record>
+
+        <record id="medico_sergio" model="aam_hospital.medico">
+            <field name="numero_colegiado">202347</field>
+            <field name="nombre_medico">Sergio</field>
+            <field name="apellido_medico_1">Navarro</field>
+            <field name="apellido_medico_2">Pérez</field>
+            <field name="email">sergio.navarro@hospitaldemo.com</field>
+            <field name="telefono">633445566</field>
+            <field name="imagen" type="base64" file="aam_hospital/static/img/doctor3.png"/>
+            <field name="departamento_id" ref="aam_hospital.departamento_digestivo"/>
+        </record>
+
     </data>
 </odoo>
