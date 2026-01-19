@@ -41,6 +41,18 @@
                                 </tree>
                             </field>
                         </group>
+                        <group string="Medicos asignados">
+                            <field name="medico_ids"> 
+                                <tree> 
+                                    <field name="numero_colegiado"/>
+                                    <field name="nombre_medico"/> 
+                                    <field name="apellido_medico_1"/> 
+                                    <field name="apellido_medico_2"/>
+                                    <field name="email"/> 
+                                    <field name="telefono"/>  
+                                </tree>
+                            </field>
+                        </group>
                     </sheet>
                 </form>
             </field>
