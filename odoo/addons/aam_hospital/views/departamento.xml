@@ -57,6 +57,32 @@
                 </form>
             </field>
         </record>
+        <record id="aam_hospital.departamento_kanban" model="ir.ui.view">
+            <field name="name">aam_hospital.departamento.kanban</field>
+            <field name="model">aam_hospital.departamento</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="id_departamento"/>
+                    <field name="especialidad"/>
+                    <field name="telefono_guardia"/>
+                    <field name="numero_despacho"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_card">
+                                <strong>Departamento: </strong>
+                                <span><t t-esc="record.especialidad.value"/></span>
+                                <br/>
+                                <strong>Teléfono de Guardia: </strong>
+                                <span><t t-esc="record.telefono_guardia.value"/></span>
+                                <br/>
+                                <strong>Número de Despacho: </strong>
+                                <span><t t-esc="record.numero_despacho.value"/></span>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
 
     </data>
 </odoo>

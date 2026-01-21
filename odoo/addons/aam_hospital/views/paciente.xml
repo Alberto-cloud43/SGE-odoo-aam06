@@ -64,5 +64,73 @@
                 </form>
             </field>
         </record>
+        <record id="aam_hospital.paciente_kanban" model="ir.ui.view">
+            <field name="name">aam_hospital.paciente.kanban</field>
+            <field name="model">aam_hospital.paciente</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_small_column">
+                    <field name="nip"/>
+                    <field name="nombre"/>
+                    <field name="apellido1"/>
+                    <field name="apellido2"/>
+                    <field name="genero"/>
+                    <field name="fecha_ingreso"/>
+                    <field name="movilidad"/>
+                    <field name="aislamiento"/>
+
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_card">
+                                <div class="o_kanban_details">
+
+                                    
+                                    <strong class="o_kanban_record_title">
+                                        <t t-esc="record.nombre.value"/> 
+                                        <t t-esc="record.apellido1.value"/> 
+                                        <t t-if="record.apellido2.value">
+                                            <t t-esc="record.apellido2.value"/>
+                                        </t>
+                                    </strong>
+
+
+
+                                    
+                                    <div class="text-muted">
+                                        NIP: <t t-esc="record.nip.value"/>
+                                    </div>
+
+                                    
+                                    <div>
+                                        <span class="text-muted">Género:</span>
+                                        <t t-esc="record.genero.value"/>
+                                    </div>
+
+                                   
+                                    <div>
+                                        <span class="text-muted">Ingreso:</span>
+                                        <t t-esc="record.fecha_ingreso.value"/>
+                                    </div>
+
+                                    
+                                    <div class="mt8">
+                                        <t t-if="record.movilidad.value">
+                                             Movilidad reducida
+                                        </t>
+                                    </div>
+
+                                    <div>
+                                        <t t-if="record.aislamiento.value">
+                                             Aislamiento
+                                        </t>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
     </data>
 </odoo>

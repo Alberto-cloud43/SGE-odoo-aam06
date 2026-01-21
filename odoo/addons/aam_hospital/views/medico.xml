@@ -6,7 +6,7 @@
             <field name="model">aam_hospital.medico</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="imagen" widget="image" options="{'size': (50, 50)}" />
+                    <field name="imagen" widget="image" options="{'size': (50, 50)}"/>
                     <field name="numero_colegiado"/>
                     <field name="nombre_medico"/>
                     <field name="apellido_medico_1"/>
@@ -17,6 +17,7 @@
                 </tree>
             </field>
         </record>
+
         <record id="aam_hospital.medico_form" model="ir.ui.view">
             <field name="name">aam_hospital.medico.form</field>
             <field name="model">aam_hospital.medico</field>
@@ -40,6 +41,42 @@
                     </sheet>
                 </form>
             </field>
-        </record>    
+        </record>
+        <record id="aam_hospital.medico_kanban" model="ir.ui.view">
+            <field name="name">aam_hospital.medico.kanban</field>
+            <field name="model">aam_hospital.medico</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="imagen"/>
+                    <field name="nombre_medico"/>
+                    <field name="apellido_medico_1"/>
+                    <field name="apellido_medico_2"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_card">
+                                <div class="o_kanban_image">
+                                    <img t-if="record.imagen.raw_value"
+                                        t-att-src="'data:image/png;base64,%s' % record.imagen.raw_value"
+                                        class="img img-fluid"
+                                        style="max-width:80px; border-radius:8px;"/>
+                                </div>
+                                <div class="o_kanban_record_top">
+                                    <strong>Medico: <t t-esc="record.nombre_medico.value"/></strong>
+                                </div>
+                                <div>
+                                    <p>Apellido 1: <t t-esc="record.apellido_medico_1.value"/></p>
+                                    <p>Apellido 2: <t t-esc="record.apellido_medico_2.value"/></p>
+                                    <p>Teléfono: <t t-esc="record.telefono.value"/></p>
+                                    <p>Email: <t t-esc="record.email.value"/></p>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
     </data>
 </odoo>

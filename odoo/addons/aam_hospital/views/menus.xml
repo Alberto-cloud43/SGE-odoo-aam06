@@ -4,22 +4,22 @@
         <record id="aam_hospital.paciente_action" model="ir.actions.act_window">
             <field name="name">Paciente</field>
             <field name="res_model">aam_hospital.paciente</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
         <record id="aam_hospital.departamento_action" model="ir.actions.act_window">
             <field name="name">Departamentos</field>
             <field name="res_model">aam_hospital.departamento</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
          <record id="aam_hospital.medico_action" model="ir.actions.act_window">
             <field name="name">Médicos</field>
             <field name="res_model">aam_hospital.medico</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
         <record id="aam_hospital.habitacion_action" model="ir.actions.act_window">
             <field name="name">Habitaciones</field>
             <field name="res_model">aam_hospital.habitacion</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
             <field name="view_id" ref="aam_hospital.habitacion_tree"/>
         </record>
 
