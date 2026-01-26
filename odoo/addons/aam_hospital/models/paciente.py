@@ -3,6 +3,7 @@ from odoo import models, fields, api
 class Paciente(models.Model):
     _name = 'aam_hospital.paciente'
     _description = 'Paciente de el Hospital'
+    _rec_name = 'display_name'
 
     nip = fields.Char('Numero Identificacion', required=True)
     nombre = fields.Char('Nombre del Paciente', required=True)
@@ -44,5 +45,9 @@ class Paciente(models.Model):
         ('email_unique', 'unique(email)', 'El email debe ser unico.'),
     ]
 
+    display_name = fields.Char(string='Nombre', compute='_compute_display_name', store=True)
 
-    
+    @api.depends('nombre', 'apellido1', 'apellido2', 'nip')
+    def _compute_display_name(self):
+        for record in self:
+            record.display_name = f"{record.nombre} {record.apellido1} {record.apellido2} ({record.nip})"

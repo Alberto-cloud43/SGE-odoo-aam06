@@ -83,6 +83,16 @@
                 </kanban>
             </field>
         </record>
+        <record id="aam_hospital.departamento_graph" model="ir.ui.view">
+            <field name="name">aam_hospital.departamento.graph</field>
+            <field name="model">aam_hospital.departamento</field>
+            <field name="arch" type="xml">
+                <graph string="Pacientes por Departamento" type="bar">
+                    <field name="especialidad"/>
+                    <field name="paciente_ids" type="count"/>
+                </graph>
+            </field>
+        </record>
 
     </data>
 </odoo>

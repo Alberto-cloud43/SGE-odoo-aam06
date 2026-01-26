@@ -131,6 +131,20 @@
                 </kanban>
             </field>
         </record>
+        <record id="aam_hospital.paciente_calendar" model="ir.ui.view">
+            <field name="name">aam_hospital.paciente.calendar</field>
+            <field name="model">aam_hospital.paciente</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendario de Ingresos y Altas"
+                        date_start="fecha_ingreso"
+                        date_stop="fecha_alta">
+                    <field name="nombre"/>
+                    <field name="fecha_ingreso"/>
+                    <field name="fecha_alta"/>
+                </calendar>
+            </field>
+        </record>
 
+        
     </data>
 </odoo>
