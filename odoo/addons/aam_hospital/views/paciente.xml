@@ -144,6 +144,22 @@
                 </calendar>
             </field>
         </record>
+        <record id="aam_hospital.paciente_pivot" model="ir.ui.view">
+            <field name="name">aam_hospital.paciente.pivot</field>
+            <field name="model">aam_hospital.paciente</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="genero" type="row"/>
+                    <field name="movilidad" type="row"/>
+                    <field name="aislamiento" type="col"/>
+                    <field name="departamento_ids" type="row"/>
+                    <field name="id_habitacion" type="col"/>
+                    <field name="ciudad" type="row"/>
+                    <field name="fecha_ingreso" interval="month" type="col"/>
+                </pivot>
+            </field>
+        </record>
+
 
         
     </data>

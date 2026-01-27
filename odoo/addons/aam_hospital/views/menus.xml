@@ -4,7 +4,7 @@
         <record id="aam_hospital.paciente_action" model="ir.actions.act_window">
             <field name="name">Paciente</field>
             <field name="res_model">aam_hospital.paciente</field>
-            <field name="view_mode">tree,form,kanban,calendar</field>
+            <field name="view_mode">tree,form,kanban,calendar,pivot</field>
         </record>
         <record id="aam_hospital.departamento_action" model="ir.actions.act_window">
             <field name="name">Departamentos</field>
