@@ -25,10 +25,6 @@
                             <field name="telefono_guardia"/>
                             <field name="numero_despacho"/>
                         </group>
-
-                        <group>
-                            <field name="descripcion"/>
-                        </group>
                         <group string="Pacientes asignados">
                             <field name="paciente_ids"> 
                                 <tree> 
